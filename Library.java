@@ -17,7 +17,8 @@ public class Library {
             books[bookCount] = bookName;
             bookCount++;
             System.out.println("Book '" + bookName + "' added to the library");
-        } else {
+        } 
+        else {
             System.out.println("Exceeds maximum capacity. You can't add more than " + bookCapacity + " books");
         }
     }
