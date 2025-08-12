@@ -1,24 +1,21 @@
 public class Tracing110{
-    public static void main(String args[]){
-      int x = 0, p = 0, sum = 0;
-      p = 1;
-      x = 2;
-      double q;
-      sum = 0;
-      while (p < 12){
-           q =  x + p-(sum+7/3)/3.0%2 ;
-           sum = sum + (++x) + (int)q;
-           System.out.println(sum++);
-           if (x > 5){
-                p += 4/2;
-          }
-           else {
-                p += 3%1;
-          }
-      }
-      sum = sum + p;
+  public static void main(String args[]){
+  int x = 0, y = 0;
+  int sum = 0;
+  while (x < 4){
+      y = x - 3;
+      while (y < 3){ 
+      sum = (sum % 3) + x - y * 3 ;
       System.out.println(sum);
-    }
+      y = y + 1;
+      }
+      if (x > 5){
+      x++;
+      }
+      else{
+      x += 2;
+      }
   }
-  
-  
+  }
+}
+
