@@ -1,64 +1,75 @@
-public class Cart {
-    public String[] items;
-    public double[] prices;
-    public int cartNumber;
-    public int itemCount;
-    public int maxItem = 3;
-    public double discount = 0.0;
+public class Cart{
+    public String Item;
+    public double [] Prices;
+    public String [] Items;
+    public int ItemCount;
+    public int TotalItems;
+    public int CartNumber;
+    public int MaxItem = 3;
+    public double ItemPrice;
+    public int discount;
 
-    public void create_cart(int num) {
-        this.cartNumber = num;
-        this.items = new String[maxItem];
-        this.prices = new double[maxItem];
-        this.itemCount = 0;
+    public void create_cart(int num){
+    this.CartNumber = num;
+    this.Prices = new double [MaxItem];
+    this.Items = new String [MaxItem];
+    this.ItemCount = 0;
     }
 
-    public void addItem(String name, double price) {
-        if (itemCount >= maxItem) {
-            System.out.println("You already have 3 items on your cart");
+    public void addItem(String Item, double ItemPrice){
+    this.Item = Item;
+    this.ItemPrice = ItemPrice;
+    if(ItemCount >= MaxItem){
+        System.out.println("No more items can be added as the limit has been reached");
+        return;
+    }
+    else{
+        Prices [ItemCount] = ItemPrice;
+        Items [ItemCount] = Item;
+        ItemCount++;
+        System.out.println(Item+ " added to cart " + CartNumber + ".");
+        System.out.println("You have " + ItemCount + " item(s) in your cart now.");
+
+    }
+    }
+
+    public void addItem(double ItemPrice, String Item){
+        this.Item = Item;
+        this.ItemPrice = ItemPrice;
+        if(ItemCount >= MaxItem){
+            System.out.println("No more items can be added as the limit has been reached");
             return;
         }
         else{
-        items[itemCount] = name;
-        prices[itemCount] = price;
-        itemCount++;
-        System.out.println(name + " added to cart " + cartNumber + ".");
-        System.out.println("You have " + itemCount + " item(s) in your cart now.");
-    }
-}
-
-    public void addItem(double price, String name) {
-        if (itemCount >= maxItem) {
-            System.out.println("You already have 3 items on your cart");
-            return;
+            Prices [ItemCount] = ItemPrice;
+            Items [ItemCount] = Item;
+            ItemCount++;
+            System.out.println(Item+ " added to cart " + CartNumber + ".");
+            System.out.println("You have " + ItemCount + " item(s) in your cart now.");
+    
         }
-        else{
-        items[itemCount] = name;
-        prices[itemCount] = price;
-        itemCount++;
-        System.out.println(name + " added to cart " + cartNumber + ".");
-        System.out.println("You have " + itemCount + " item(s) in your cart now.");
-    }
-}
+     }
 
-    public void cartDetails() {
-        System.out.println("Your cart(c" + cartNumber + ") :");
-        for (int i = 0; i < itemCount; i++) {
-            System.out.println(items[i] + " - " + prices[i]);
+     public void giveDiscount(int discountAmount){
+        this.discount = discountAmount;
+     }
+
+    public double calculateTotal(){
+     double TotalPrice = 0;
+     for(int i = 0; i<ItemCount; i++){
+        TotalPrice += Prices[i];
+     }
+      TotalPrice = TotalPrice * (1 - discount / 100);
+      return TotalPrice;
+    }
+
+     public void cartDetails() {
+        System.out.println("Your cart(c" + CartNumber + ") :");
+        for (int i = 0; i < ItemCount; i++) {
+            System.out.println(Items[i] + " - " + Prices[i]);
         }
         System.out.println("Discount Applied: " + discount + "%");
         System.out.println("Total price: " + calculateTotal());
     }
 
-    public void giveDiscount(double discount) {
-        this.discount = discount;
-    }
-
-    public double calculateTotal() {
-        double total = 0;
-        for (int i = 0; i < itemCount; i++) {
-            total += prices[i];
-        }
-        return total * (1 - discount / 100);
-    }
 }
