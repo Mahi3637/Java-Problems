@@ -19,6 +19,7 @@ public class Test1{
       mg1 = mg2 + x + 2;
       System.out.println(x + " " + y+ " " + sum);
     }
+    
   }
   
   
