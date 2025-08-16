@@ -5,7 +5,7 @@ public class BracuBus {
     private int passengerCount;
     
     public BracuBus(String route) {
-        this(route, 2); // default capacity is 2
+        this(route, 2); 
     }
     
     public BracuBus(String route, int maxCapacity) {

@@ -13,8 +13,6 @@ public class BracuStudent {
         this.hasPass = true;
     }
 
-    // Removed duplicate method definition
-
     public void setLocation(String location){
         this.location = location;
     }
@@ -34,7 +32,6 @@ public class BracuStudent {
     }
 
     public boolean hasPass() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'hasPass'");
+        return hasPass;
     }
 }
