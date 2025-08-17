@@ -1,0 +1,10 @@
+public class FinalT6ATester {
+    public static void main(String [] args){
+        FinalT6A q1 = new FinalT6A(2,1);
+        q1.methodA();
+        FinalT6A q2 = new FinalT6A(3,1);
+        q2.methodB(7,8);
+     }
+
+
+}
