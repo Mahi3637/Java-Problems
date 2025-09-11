@@ -1,33 +1,42 @@
-public class B{
-    public static int x;
-    public int y = 4;
-    public int temp = -5;
-    public int sum = 2;
-    public B(){
-      y = temp + 3 ;
-      sum = 3 + temp + 3;
+// public class B extends A {
+//   public int x;
+//   public B(){
+//     y = temp + 3 ;
+//     sum = 3 + temp + 2;
+//     temp-=1;
+//   } 
+//   public B(B b){
+//     sum = b.sum;
+//     x = b.x;
+//   }
+//   public void methodB(int m, int n){    
+//    int  y = 0;
+//    y = y + this.y;
+//    x = this.y + 2 + temp;
+//    methodA(x, y);
+//    sum = x + y + super.sum;
+//    System.out.println(x + " " + y+ " " + sum);
+//   }
+// }
+  
+class B extends A {
+  public static int x = 1;
+  public B(){
+      y = temp + 1 ;
+      x = 3 + temp + x;
       temp-=2;
-    }  
-    public B(B b){
-      sum = b.sum;
-      B.x = b.x;
-      b.methodB(1,3);
-    }
-     public void methodA(int m, int n){
-      int x = 2;
-      y = y + m + (temp++);
-      x = x + 7 +  n;
-      sum = sum + x + y;
-      System.out.println(x + " " + y+ " " + sum);  
-    }
-    public void methodB(int m, int n){    
-      int  y = 0;
-      y = y + this.y; 
-      x = this.y + 3 + temp;
-      methodA(x, y);
-      sum = x + y + sum;
-      System.out.println(x + " " + y+ " " + sum);
-    }
+  }  
+  public B(B b){
+      sum = b.sum + super.sum;
+      x = b.x + x;
   }
-  
-  
+  public void methodB(int m, int n){    
+     int [] y = {0};
+      super.y = y[0] + this.y + m; 
+      x = super.y + 2 + temp - n;
+      methodA(x, y);
+      sum = x + y[0] + super.sum;
+      System.out.println(x + " " + y[0]+ " " + sum);
+  }
+}
+
