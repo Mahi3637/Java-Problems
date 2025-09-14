@@ -13,7 +13,7 @@ public class BorrowerTester {
         b2.borrowBook("Pather Panchali");
         b2.borrowerDetails();
         System.out.println("*********3*********");
-      System.out.println(Borrower.remainingBooks("Anandmath")+" copies of Anandmath is remaining.");
+    
         System.out.println("*********4*********");
         Borrower b3 = new Borrower("Anika");
         b3.borrowBook("Anandmath");

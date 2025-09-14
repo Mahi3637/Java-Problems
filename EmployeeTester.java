@@ -1,33 +1,29 @@
-public class EmployeeTester {
-    public static void main(String[] args){
-
-        Employee emp1 = new Employee();
-        Employee emp2 = new Employee();
-        Employee emp3 = new Employee();
-          
-        emp1.newEmployee("Harry Potter");
-        emp2.newEmployee("Hermione Granger");
-        emp3.newEmployee("Ron Weasley");
-        System.out.println("1 ==========");
-        emp1.displayInfo();
-        System.out.println("2 ==========");
-        emp2.displayInfo();
-        System.out.println("3 ==========");
-        emp3.displayInfo();
-        System.out.println("4 ==========");
-        emp1.calculateTax();
-        System.out.println("5 ==========");
-        emp1.promoteEmployee("lead");
-        System.out.println("6 ==========");
-        emp1.calculateTax();
-        System.out.println("7 ==========");
-        emp1.displayInfo();
-        System.out.println("8 ==========");
-        emp3.promoteEmployee("manager");
-        System.out.println("9 ==========");
-        emp3.calculateTax();
-        System.out.println("10 ==========");
-        emp3.displayInfo();
-      }
-    
+public class EmployeeTester{
+  public static void main(String args[]){
+    Employee e1 = new Employee();
+    Employee e2 = new Employee("Alif", 34, "Fulltime");
+    System.out.println("1-------------");
+    Company c1 = new Company();
+    c1.details();
+    System.out.println("2-------------");
+    Employee e3 = new Employee("Akter", 36,"Part-time");
+    Employee e4 = new Employee("Ria", 38, "Fulltime");
+    System.out.println("3-------------");
+    c1.addEmployee(e2);
+    c1.addEmployee(e3);
+    System.out.println("4-------------");
+    c1.details();
+    System.out.println("5-------------");
+    c1.addEmployee(e4);
+    c1.addEmployee(e1);
+    System.out.println("6-------------");
+    c1.details();
+    System.out.println("7-------------");
+    c1.removeEmployee(e4);
+    System.out.println("6-------------");
+    c1.details();
+  }
 }
+    
+    
+

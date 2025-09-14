@@ -1,48 +1,28 @@
-public class Employee {
-     public String name;
-     public double salary;
-     public String designation;
+public class Employee{
+    private String name;
+    private int id;
+    private String type;
+    public int length;
 
-     public void newEmployee(String name){
-        this.name = name;
-        this.salary = 30000.0;
-        this.designation = "Junior";
-     }
-
-     public void calculateTax() {
-        double tax = 0;
-        if (salary > 50000.0) {
-            tax = 0.30 * salary;
-            System.out.println(name + " Tax Amount: " + tax + " Tk");
-        } else if (salary > 30000.0) {
-            tax = 0.10 * salary;
-            System.out.println(name + " Tax Amount: " + tax + " Tk");
-        } else {
-            System.out.println("No need to pay tax");
-        }
+    public Employee(){
+        System.out.println("A default employee has been Created");
     }
 
-     public void promoteEmployee(String newdesignation){
-        if(newdesignation.equals("senior")){
-            this.salary += 25000.0;
-            System.out.println(name+ " has been promoted to "+ designation);
-            System.out.println("New salary: "+this.salary);
-        }
-        if(newdesignation.equals("lead")){
-            this.salary += 50000.0;
-            System.out.println(name+ " has been promoted to "+ designation);
-            System.out.println("New salary: "+this.salary);
-        }
-        if(newdesignation.equals("Manager")){
-            this.salary += 75000.0;
-            System.out.println(name+ " has been promoted to "+ designation);
-            System.out.println("New salary: "+this.salary);
-        }
-     }
+    public Employee(String name, int id, String type){
+        this.name = name;
+        this.id = id;
+        this.type = type;
+    }
 
-     public void displayInfo(){
-        System.out.println("Name: "+ name);
-        System.out.println("Salary: "+ salary);
-        System.out.println("Designation: "+designation);
-     }
+    public String getName(){
+        return name;
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public String getType(){
+        return type;
+    }
 }

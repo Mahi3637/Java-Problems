@@ -1,30 +1,27 @@
-public class LibraryTester{
-    public static void main(String[] args) {
-      Library a1 = new Library();
-      a1.setBookCapacity(3);
-      System.out.println("1-------------");
-      a1.addBook("Ice");
-      System.out.println("2-------------");
-      a1.printDetail();
-      System.out.println("3-------------");
-      a1.addBook("Emma");
-      a1.addBook("Wings");
-      a1.addBook("Next");
-      System.out.println("4-------------");
-      a1.printDetail();
-      Library a2 = new Library();
-      a2.setBookCapacity(4);
-      System.out.println("5-------------");
-      a2.addBook("Onnobhubon");
-      a2.addBook("Ami");
-      System.out.println("6-------------");
-      a2.printDetail();
-      System.out.println("7-------------");
-      a2.addBook("Deyal");
-      a2.addBook("Himu");
-      a2.addBook("Megher Upor Bari");
-      System.out.println("8-------------");
-      a2.printDetail();
-    }
+public class BorrowerTester{
+  public static void main(String args[]){
+    Borrower.bookStatus();
+    System.out.println("*********1*********");
+    Borrower b1 = new Borrower("Nabila");
+    b1.borrowBook("Pather Panchali");
+    b1.borrowBook("Anandmath");
+    b1.borrowerDetails();
+    System.out.println("*********2*********");
+    Borrower b2 = new Borrower("Sadia");
+    b2.borrowBook("Anandmath");
+    b2.borrowBook("Durgesh Nandini");
+    b2.borrowBook("Pather Panchali");
+    b2.borrowerDetails();
+    System.out.println("*********3*********");
+  System.out.println(Borrower.remainingBooks("Anandmath")+" copies of Anandmath is remaining.");
+    System.out.println("*********4*********");
+    Borrower b3 = new Borrower("Anika");
+    b3.borrowBook("Anandmath");
+    Borrower.bookStatus();
+    System.out.println("*********5*********");
+    Borrower b4 = new Borrower("Oishi");
+    b4.borrowBook("Anandmath");
+    b4.borrowBook("Durgesh Nandini");
+    b4.borrowerDetails();
   }
-    
+}   
